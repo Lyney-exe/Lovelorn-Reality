@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 12: expected statement.
+    name = renpy.input(_("Enter a name to begin your journey…"))
+         ^
+
+File "game/script.rpy", line 13: expected statement.
+    name = name.strip() or __("Kyu")
+         ^
+
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Mon Oct 21 12:21:46 2024
