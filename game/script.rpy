@@ -4,14 +4,15 @@
 # name of the character.
 
 define y = Character("Yami", color= "#7b6ac5ff")
-
-
+define s = Character("Stranger", color= "#951d1d")
+define d = Character("???", color= "#ffffff")
+define k = Character("Prof. Kure", color= "#ffffff")
+define t = Character("Tenshi", color= "#d69bea")
+define tv = Character("Television", color= "#01ff3c")
 # The game starts here.
 
 label start:
-    define name = renpy.input(_("Enter a name to begin your journey…")).strip() #or __("Kyu")
-
-    define mc = Character(name, color="#ffffffff")
+    
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -27,9 +28,9 @@ label start:
 
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+    tv "Please my darling! Stay with me! I cannot lose you like this, why did you have to do it on our honeymoon! Why did you have to do it at all?!"
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    tv "Oh my dear… The time has come and death shall put me to peace…"
 
     # This ends the game.
 
