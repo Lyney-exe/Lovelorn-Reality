@@ -39,7 +39,17 @@ label start:
 
     "Grumble... Grumble..."
 
-    "Ugh... I'm so hungry..."
+    player_name "Ugh... I'm so hungry..."
+
+    "You get up from the couch and turn off your TV, heading your way to the kitchen side of your dorm."
+
+    player_name "Alright, let's see..."
+
+    player_name "!!!"
+
+    player_name "Are you kidding me?! I swear, I went grocery shopping yesterday!"
+
+
 
     # This ends the game.
 
