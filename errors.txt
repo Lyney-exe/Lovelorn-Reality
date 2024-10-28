@@ -3,12 +3,8 @@ errors listed below, and try again.
 
 
 File "game/script.rpy", line 26: end of line expected.
-    scene livingroom.jpg
-                    ^
-
-File "game/script.rpy", line 67: end of line expected.
-    scene outside.jpg
-                 ^
+    scene bg living_room.jpg
+                        ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Fri Oct 25 12:27:01 2024
+Mon Oct 28 13:56:50 2024
