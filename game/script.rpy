@@ -17,7 +17,7 @@ label start:
 
     $ player_name = player_name.strip()
     if player_name == "":
-        $ player_name="Kyu"
+        $ player_name="Kyu";
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -67,6 +67,38 @@ label start:
     "The fresh breeze of the cold air hits your face as you step outside, turning around, making sure the door is locked behind you."
 
     "As you walk on the side of the road, you realize the sun started to set sooner than you thought."
+
+    menu:
+        "Go back home":
+            jump choice1_yes
+
+        "Keep walking":
+            jump choice1_no
+
+label choice1_yes:
+
+    $ menu_flag = True
+
+    player_name "On second thought... Staying at home sounds better, and more comforting. I'll just order Chinese takeout. "
+
+    "Bonus Ending: Takeout"
+
+    # This ends the game
+
+    jump choice1_done
+
+label choice1_no:
+
+    $ menu_flag = False
+
+    player_name "A quick visit won't hurt, plus it's very quiet in this neighborhood. I don't need that much anyway."
+
+    jump choice1_done
+
+label choice1_done:
+
+    # ... the game continues here.
+ 
 
     
 

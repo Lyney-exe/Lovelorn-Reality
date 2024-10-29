@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 26: end of line expected.
-    scene bg living_room.jpg
-                        ^
+File "game/script.rpy", line 71: menu statement expects a non-empty block.
+    menu:
+        ^
+
+File "game/script.rpy", line 73: expected statement.
+    "Go back home":
+                  ^
+
+File "game/script.rpy", line 76: expected statement.
+    "Keep walking":
+                  ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Oct 28 13:56:50 2024
+Tue Oct 29 12:35:52 2024
