@@ -98,6 +98,29 @@ label choice1_no:
 label choice1_done:
 
     # ... the game continues here.
+
+    "You walk your way towards the isle where the freezer is situated."
+
+    player_name "Mmm... Nothing pleasant..."
+
+    "You go over to another aisle, looking over the instant noodles on the shelf to grab yourself one for tonight’s dinner."
+
+    "You go to the back of the store to find the area where they keep the drinks at. You take a peek to see the limited edition strawberry milkshake, and it’s stuck between a few other drinks in the back."
+
+    player_name "No way I’ll be getting that from that far!"
+
+    "So you walked away in disappointment, not being able to buy the drink you wanted, so you go on to get a few snacks for tomorrow."
+
+    "As you picked them up and held it in your hands, you saw a tall man, opening the beverage door and easily reaching for the last bottle of strawberry milk."
+
+    "You sigh in defeat. Yet again, the strawberry milkshake is out of order! Wow."
+
+    "The tall man in mostly black clothing walks up to you, you steady yourself to prepare socializing."
+
+    s "Is this what you wanted…? I saw you earlier looking at it, but you didn’t take it. So I decided to help you out a bit."
+
+    
+
  
 
     
