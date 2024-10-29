@@ -64,6 +64,10 @@ label start:
 
     "You walk over to the front door of the dorm and slide your shoes on while taking a hoodie to wear on your way out to the nearest corner store."
 
+    "The fresh breeze of the cold air hits your face as you step outside, turning around, making sure the door is locked behind you."
+
+    "As you walk on the side of the road, you realize the sun started to set sooner than you thought."
+
     
 
 
