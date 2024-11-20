@@ -54,7 +54,7 @@ label start:
 
     player_name "Alright, let's see..."
 
-    player_name "!!!"
+    player_name "!!!" with vpunch
 
     player_name "Are you kidding me?! I swear, I went grocery shopping yesterday!"
 
