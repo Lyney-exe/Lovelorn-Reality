@@ -107,7 +107,7 @@ label choice1_done:
 
     "You go to the back of the store to find the area where they keep the drinks at. You take a peek to see the limited edition strawberry milkshake, and it’s stuck between a few other drinks in the back."
 
-    player_name "No way I’ll be getting that from that far!"
+    player_name "No way I'll be getting that from that far!"
 
     "So you walked away in disappointment, not being able to buy the drink you wanted, so you go on to get a few snacks for tomorrow."
 
