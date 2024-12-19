@@ -4,7 +4,7 @@
 # name of the character.
 
 define y = Character("Yami", color= "#7b6ac5ff")
-define s = Character("Stranger", color= "#951d1d")
+define s = Character("Étranger", color= "#951d1d")
 define d = Character("???", color= "#ffffff")
 define k = Character("Prof. Kure", color= "#ffffff")
 define t = Character("Tenshi", color= "#d69bea")
