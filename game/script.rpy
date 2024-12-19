@@ -13,7 +13,7 @@ define tv = Character("Television", color= "#01ff3c")
 # The game starts here.
 
 label start:
-    $ player_name = renpy.input("Write a name to begin your journey...")
+    $ player_name = renpy.input("Inscrivez un nom pour commencer votre journée: ")
 
     $ player_name = player_name.strip()
     if player_name == "":
@@ -32,54 +32,54 @@ label start:
 
     # These display lines of dialogue.
 
-    tv "Please my darling! Stay with me! I cannot lose you like this, why did you have to do it on our honeymoon! Why did you have to do it at all?!"
+    tv "S'il te plaît, ma chérie ! Reste avec moi ! Je ne peux pas te perdre comme ça, pourquoi as-tu fait ça pendant notre lune de miel ! Pourquoi fallait-il que tu le fasses tout court ? !"
 
-    tv "Oh my dear… The time has come and death shall put me to peace…"
+    tv "Oh mon cher... L'heure est venue et la mort m'apportera la paix..."
 
-    tv "Please do not end your life! You have so much more ahead of you!"
+    tv "S'il vous plaît, ne mettez pas fin à votre vie ! Tu as encore tant de choses devant toi !"
 
-    tv "Oh my dear husband... Life has already gave me everything..."
+    tv "Oh mon cher mari... La vie m'a déjà tout donné..."
 
-    tv "Don't close your eyes just yet, look at me and breathe darling... Please..."
+    tv "Ne ferme pas encore les yeux, regarde-moi et respire, chérie... S'il te plaît..."
 
-    tv "Hold me close to your heart... And I'll... be with you, forever..."
+    tv "Tiens-moi près de ton coeur... Et je serai... avec toi, pour toujours..."
 
-    tv "Yes my love... I shall see you, in our next life..."
+    tv "Oui, mon amour... Je te reverrai dans notre prochaine vie..."
 
     "Grumble... Grumble..."
 
-    player_name "Ugh... I'm so hungry..."
+    player_name "Ugh... Je suis tellement faim..."
 
-    "You get up from the couch and turn off your TV, heading your way to the kitchen side of your dorm."
+    "Tu te lèves du canapé, tu éteins la télé et tu te diriges vers la cuisine de ton dortoir."
 
-    player_name "Alright, let's see..."
+    player_name "D'accord, voyons voir..."
 
     player_name "!!!" with vpunch
 
-    player_name "Are you kidding me?! I swear, I went grocery shopping yesterday!"
+    player_name "Est-ce que tu blague ?! Je jure que j'ai fait du magazinage hier!"
 
-    "You gave out one long sigh and shut the empty fridge door closed. You whined as you knew what you had to do."
+    "Tu as poussé un long soupir et tu as refermé la porte du réfrigérateur vide. Tu as pleurniché en sachant ce qu'il te restait à faire."
 
-    player_name "Argh, now I have to go to the supermarket AGAIN. Tough day, no relaxing for me today I guess."
+    player_name "Argh, Maintenant, je dois encore aller au supermarché. Dure journée, pas de détente pour moi aujourd'hui, je suppose."
 
-    "You walk over to the front door of the dorm and slide your shoes on while taking a hoodie to wear on your way out to the nearest corner store."
+    "Vous vous dirigez vers la porte d'entrée du dortoir et vous enfilez vos chaussures tout en prenant un sweat à capuche que vous porterez en allant au magasin du coin le plus proche."
 
-    "The fresh breeze of the cold air hits your face as you step outside, turning around, making sure the door is locked behind you."
+    "La brise fraîche de l'air froid frappe votre visage alors que vous sortez, vous retournant, vous assurant que la porte est bien fermée derrière vous."
 
-    "As you walk on the side of the road, you realize the sun started to set sooner than you thought."
+    "En marchant sur le bord de la route, vous vous rendez compte que le soleil s'est couché plus tôt que vous ne le pensiez."
 
     menu:
-        "Go back home":
+        "Retourner à la maison":
             jump choice1_yes
 
-        "Keep walking":
+        "Continuer à marcher":
             jump choice1_no
 
 label choice1_yes:
 
     $ menu_flag = True
 
-    player_name "On second thought... Staying at home sounds better, and more comforting. I'll just order Chinese takeout. "
+    player_name "A bien y réfléchir... Rester à la maison me semble mieux, et plus réconfortant. Je vais commander un plat chinois à emporter. "
 
     "Bonus Ending: Takeout"
 
@@ -91,7 +91,7 @@ label choice1_no:
 
     $ menu_flag = False
 
-    player_name "A quick visit won't hurt, plus it's very quiet in this neighborhood. I don't need that much anyway."
+    player_name "Une petite visite ne fait pas de mal, en plus c'est très calme dans ce quartier."
 
     jump choice1_done
 
@@ -99,25 +99,25 @@ label choice1_done:
 
     # ... the game continues here.
 
-    "You walk your way towards the isle where the freezer is situated."
+    "Vous vous dirigez vers l'îlot où se trouve le congélateur."
 
-    player_name "Mmm... Nothing pleasant..."
+    player_name "Mmm... Rien de plaisant..."
 
-    "You go over to another aisle, looking over the instant noodles on the shelf to grab yourself one for tonight’s dinner."
+    "Vous vous dirigez vers un autre région dans le magasin, regardant les nouilles instantanées sur l'étagère afin d'en prendre une pour le dîner de ce soir."
 
-    "You go to the back of the store to find the area where they keep the drinks at. You take a peek to see the limited edition strawberry milkshake, and it’s stuck between a few other drinks in the back."
+    "Vous vous rendez à l'arrière du magasin pour trouver l'endroit où les boissons sont conservées. Vous jetez un coup d'œil pour voir le milkshake à la fraise en édition limitée, et il est coincé entre quelques autres boissons à l'arrière."
 
-    player_name "No way I'll be getting that from that far!"
+    player_name "Pas question que j'obtienne cela d'aussi loin !"
 
-    "So you walked away in disappointment, not being able to buy the drink you wanted, so you go on to get a few snacks for tomorrow."
+    "Vous êtes donc reparti déçu de ne pas avoir pu acheter la boisson que vous vouliez, et vous êtes allé acheter quelques collation pour le lendemain."
 
-    "As you picked them up and held it in your hands, you saw a tall man, opening the beverage door and easily reaching for the last bottle of strawberry milk."
+    "En les ramassant et en les tenant dans vos mains, vous avez vu un homme de grande taille ouvrir la porte des boissons et attraper facilement la dernière bouteille de lait à la fraise."
 
-    "You sigh in defeat. Yet again, the strawberry milkshake is out of order! Wow."
+    "Vous soupirez de défaite. Encore une fois, le milkshake à la fraise est hors service !"
 
-    "The tall man in mostly black clothing walks up to you, you steady yourself to prepare socializing."
+    "Le grand homme vêtu de noir s'approche de vous, vous vous préparez à la rencontre."
 
-    s "Is this what you wanted…? I saw you earlier looking at it, but you didn’t take it. So I decided to help you out a bit."
+    s "C'est ce que vous vouliez... ? Je t'ai vu tout à l'heure le regarder, mais tu ne l'as pas pris. J'ai donc décidé de vous aider un peu."
 
     
 
