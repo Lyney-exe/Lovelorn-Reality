@@ -119,6 +119,15 @@ label choice1_done:
 
     s "C'est ce que vous vouliez... ? Je t'ai vu tout à l'heure le regarder, mais tu ne l'as pas pris. J'ai donc décidé de vous aider un peu."
 
+    menu:
+        "Le remercier":
+            jump choice2_yes
+
+        "Se méfier":
+            jump choice2_no
+label
+
+
     
 
  
