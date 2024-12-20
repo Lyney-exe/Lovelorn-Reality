@@ -144,11 +144,6 @@ label choice2_yes
     player_name "Tu blague pas? Moi aussi!"
 
     jump choice2_done
-    
-# ... the game continues here.
-
-"bing bong"
-
 
 label choice2_no
     $ menu_flag = False
@@ -175,7 +170,9 @@ label choice2_no
 
 label choice2_done
 
+    # ... the game continues here.
 
+    "teehee"
     
 
     
