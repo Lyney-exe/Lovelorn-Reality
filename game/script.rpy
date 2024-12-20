@@ -166,7 +166,7 @@ label choice2_no
 
     "Ending 2: Tu t'es enfui"
 
-# This ends the game
+    # This ends the game
 
     jump choice2_done
 
@@ -174,7 +174,6 @@ label choice2_done
 
     # ... the game continues here.
 
-    "teehee"
     
 
     
