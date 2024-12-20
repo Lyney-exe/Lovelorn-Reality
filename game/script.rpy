@@ -125,8 +125,57 @@ label choice1_done:
 
         "Se méfier":
             jump choice2_no
-label
 
+label choice2_yes
+    $ menu_flag = True
+
+    player_name "Merci beaucoup!"
+
+    s "Pas de problème, est-ce que vous voulez d'aide avec d'autre choses?"
+
+    "Il a regardé vos mains pleines de collation et votre dîner."
+
+    s "Tu sais quoi, je vais payer pour tes affaires. Je pense que je vous connais de quelque part."
+
+    player_name "Vraiment? Quelle université fréquentez-vous ?"
+
+    s "Université de Moonshell."
+
+    player_name "Tu blague pas? Moi aussi!"
+
+    jump choice2_done
+
+label choice2_no
+    $ menu_flag = False
+
+    player_name "Uhm... Merci..."
+
+    "Vous prenez avec précaution la boisson que vous vouliez dans sa main, en le regardant à plusieurs reprises, lui et sa main."
+
+    "L'homme regarde votre pile remplie d'en-cas et votre dîner."
+
+    s "Avez-vous besoin d'aide pour ces... ?"
+
+    player_name "Non ! Pas du tout ! Je n'ai pas besoin d'un étranger pour m'aider !"
+
+    "Vous essayez de marcher rapidement jusqu'à la caisse."
+
+    "Vous payez vos affaires et quittez le magasin immédiatement."
+
+    player_name "Finalement... À la maison sans cet étranger me suivre ou essaie de me parler..."
+
+    "Ending 2: Tu t'es enfui"
+
+# This ends the game
+
+    jump choice2_done
+
+label choice2_done
+
+    # ... the game continues here.
+
+    "teehee"
+    
 
     
 
