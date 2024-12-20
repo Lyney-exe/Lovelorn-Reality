@@ -144,8 +144,7 @@ label choice2_yes
     player_name "Tu blague pas? Moi aussi!"
 
     jump choice2_done
-
-label choice2_done
+    
 # ... the game continues here.
 
 "bing bong"
