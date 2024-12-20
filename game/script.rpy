@@ -145,7 +145,7 @@ label choice2_yes
 
     jump choice2_done
 
-label choice2_no
+label choice2_no:
     $ menu_flag = False
 
     player_name "Uhm... Merci..."
@@ -170,7 +170,7 @@ label choice2_no
 
     jump choice2_done
 
-label choice2_done
+label choice2_done:
 
     # ... the game continues here.
 

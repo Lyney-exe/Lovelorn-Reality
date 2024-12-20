@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 128: expected 'label_name_declare' not found.
-    label
-         ^
+File "game/script.rpy", line 129: expected ':' not found.
+    label choice2_yes
+                     ^
+
+File "game/script.rpy", line 148: expected ':' not found.
+    label choice2_no
+                    ^
+
+File "game/script.rpy", line 173: expected ':' not found.
+    label choice2_done
+                      ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Fri Dec 20 13:42:32 2024
+Fri Dec 20 13:49:38 2024

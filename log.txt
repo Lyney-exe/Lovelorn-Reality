@@ -1,20 +1,28 @@
-2024-12-20 18:42:32 UTC
+2024-12-20 18:49:37 UTC
 Windows-10-10.0.22621
 Ren'Py 8.3.2.24090902
 
 Early init took 0.06s
-Loading error handling took 0.02s
-Loading script took 0.12s
-Loading save slot metadata took 0.03s
+Loading error handling took 0.05s
+Loading script took 0.17s
+Loading save slot metadata took 0.12s
 Loading persistent took 0.00s
 
-File "game/script.rpy", line 128: expected 'label_name_declare' not found.
-    label
-         ^
+File "game/script.rpy", line 129: expected ':' not found.
+    label choice2_yes
+                     ^
+
+File "game/script.rpy", line 148: expected ':' not found.
+    label choice2_no
+                    ^
+
+File "game/script.rpy", line 173: expected ':' not found.
+    label choice2_done
+                      ^
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Interface start took 0.79s
+Interface start took 1.03s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
