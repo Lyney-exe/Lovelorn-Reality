@@ -174,6 +174,16 @@ label choice2_done:
 
     # ... the game continues here.
 
+    player_name "Hmmm..."
+
+    menu:
+        "Qu'est-ce que vous étudiez ?":
+            jump choiceA_yes
+
+        "Quels sont les professeurs que vous avez ce semestre ?":
+            jump choiceB
+
+        
     
 
     
