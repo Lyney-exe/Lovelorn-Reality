@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 71: menu statement expects a non-empty block.
-    menu:
-        ^
-
-File "game/script.rpy", line 73: expected statement.
-    "Go back home":
-                  ^
-
-File "game/script.rpy", line 76: expected statement.
-    "Keep walking":
-                  ^
+File "game/script.rpy", line 128: expected 'label_name_declare' not found.
+    label
+         ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Oct 29 12:35:52 2024
+Fri Dec 20 13:42:32 2024
