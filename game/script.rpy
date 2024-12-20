@@ -126,7 +126,7 @@ label choice1_done:
         "Se méfier":
             jump choice2_no
 
-label choice2_yes
+label choice2_yes:
     $ menu_flag = True
 
     player_name "Merci beaucoup!"
