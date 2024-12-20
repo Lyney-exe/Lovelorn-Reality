@@ -168,6 +168,8 @@ label choice2_no
 
 # This ends the game
 
+    jump choice2_done
+
 label choice2_done
 
     # ... the game continues here.
