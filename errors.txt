@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 129: expected ':' not found.
-    label choice2_yes
-                     ^
+File "game/script.rpy", line 227: expected python code
+    $
+     ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Fri Dec 20 13:50:29 2024
+Mon Jan  6 10:23:42 2025

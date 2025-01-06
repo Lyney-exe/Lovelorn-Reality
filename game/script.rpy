@@ -5,8 +5,6 @@
 
 define y = Character("Yami", color= "#7b6ac5ff")
 define s = Character("Étranger", color= "#951d1d")
-define d = Character("???", color= "#ffffff")
-define k = Character("Prof. Kure", color= "#ffffff")
 define t = Character("Tenshi", color= "#d69bea")
 define tv = Character("Television", color= "#01ff3c")
 
@@ -115,7 +113,21 @@ label choice1_done:
 
     "Vous soupirez de défaite. Encore une fois, le milkshake à la fraise est hors service !"
 
+    show yami neutral with dissolve
+
+    init:
+        image yami neutral:
+            "yami neutral.png"
+            zoom 1.5
+
     "Le grand homme vêtu de noir s'approche de vous, vous vous préparez à la rencontre."
+    
+    show yami confusedtalking
+
+    init:
+        image yami confusedtalking:
+            "yami confusedtalking.png"
+            zoom 1.5
 
     s "C'est ce que vous vouliez... ? Je t'ai vu tout à l'heure le regarder, mais tu ne l'as pas pris. J'ai donc décidé de vous aider un peu."
 
@@ -129,15 +141,31 @@ label choice1_done:
 label choice2_yes:
     $ menu_flag = True
 
+    show yami neutral
+
     player_name "Merci beaucoup!"
+
+    show yami neutraltalking
+    init:
+        image yami neutraltalking:
+            "yami neutraltalking.png"
+            zoom 1.5
 
     s "Pas de problème, est-ce que vous voulez d'aide avec d'autre choses?"
 
+    show yami neutral
+
     "Il a regardé vos mains pleines de collation et votre dîner."
+
+    show yami neutraltalking
 
     s "Tu sais quoi, je vais payer pour tes affaires. Je pense que je vous connais de quelque part."
 
+    show yami neutral
+
     player_name "Vraiment? Quelle université fréquentez-vous ?"
+
+    show yami neutraltalking
 
     s "Université de Moonshell."
 
@@ -164,7 +192,7 @@ label choice2_no:
 
     player_name "Finalement... À la maison sans cet étranger me suivre ou essaie de me parler..."
 
-    "Ending 2: Tu t'es enfui"
+    "Ending 2: Tu t'es t'enfui"
 
     # This ends the game
 
@@ -178,10 +206,30 @@ label choice2_done:
 
     menu:
         "Qu'est-ce que vous étudiez ?":
-            jump choiceA_yes
+            jump choiceA
 
         "Quels sont les professeurs que vous avez ce semestre ?":
             jump choiceB
+        
+        "Quel est votre nom?":
+            jump choiceC
+
+label choiceA:
+    $ menu_flag = True
+
+    s "J'étudie le Génie Civil."
+
+    player_name "Mais c'est dificile, non?"
+
+    s "Pas vraiment, sa me prend beaucoup de temps bien sure pour finir un projet."
+
+    jump choiceA_done
+
+label choiceB:
+    
+
+    
+
 
         
     
