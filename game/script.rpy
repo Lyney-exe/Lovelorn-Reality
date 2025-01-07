@@ -5,7 +5,6 @@
 
 define y = Character("Yami", color= "#7b6ac5ff")
 define s = Character("Étranger", color= "#951d1d")
-define t = Character("Tenshi", color= "#d69bea")
 define tv = Character("Television", color= "#01ff3c")
 
 # The game starts here.
@@ -203,29 +202,44 @@ label choice2_done:
     # ... the game continues here.
 
     player_name "Hmmm..."
-
+label choices:
     menu:
-        "Qu'est-ce que vous étudiez ?":
-            jump choiceA
+        "Qu'est-ce que vous étudiez ?": 
+            s "J'étudie le Génie Civil"
+            
+            player_name "Mais c'est difficle, non?"
 
+            s "Pas vraiment, sa me prenais beaucoup de temps pour en finir mes laboratoires, mais c'est facile quand tu comprend."
+
+            $ option1_done = True
+
+            
         "Quels sont les professeurs que vous avez ce semestre ?":
-            jump choiceB
-        
-        "Quel est votre nom?":
-            jump choiceC
+            s "Je pense que j'ai M. Alfred pour mon cours d'algébre..."
 
-label choiceA:
-    $ menu_flag = True
+            s "J'ai aucune idée de ce que leurs nom est, j'en veut juste apprendre et passée mes classes."
 
-    s "J'étudie le Génie Civil."
+            $ option2_done = True
 
-    player_name "Mais c'est dificile, non?"
+        "Quel est votre nom?" if option1_done and option2_done:
+            y "Mon nom est Yami, et vous, quelle est votre nom?"
 
-    s "Pas vraiment, sa me prend beaucoup de temps bien sure pour finir un projet."
+            player_name "Ah! Je m'appelle %(player_name)s."
 
-    jump choiceA_done
+            return # End of loop after option 3 is chosen
 
-label choiceB:
+        # Loop back to the choices menu
+        jump choices
+
+        # ... the game continues here.
+
+        y "Bien, le soleil va bientôt se coucher, il faut que j'y aille. Ce fut un plaisir de vous parler !"
+
+        player_name "Aurevoir !"
+
+        "Ending 1: Tu t'es fait un nouvel ami"
+
+        "A/N: Merci de jouer mon Roman Visual ! J'espère que vous avez du plaisir en jouant !"
     
 
     
