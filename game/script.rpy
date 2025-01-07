@@ -67,34 +67,26 @@ label start:
 
     menu:
         "Retourner à la maison":
-            jump choice1_yes
+            $ menu_flag = True
+
+            player_name "A bien y réfléchir... Rester à la maison me semble mieux, et plus réconfortant. Je vais commander un plat chinois à emporter. "
+
+            "Bonus Ending: Takeout"
+
+            return
 
         "Continuer à marcher":
-            jump choice1_no
+            $ menu_flag = False
 
-label choice1_yes:
+            player_name "Une petite visite ne fait pas de mal, en plus c'est très calme dans ce quartier."
 
-    $ menu_flag = True
 
-    player_name "A bien y réfléchir... Rester à la maison me semble mieux, et plus réconfortant. Je vais commander un plat chinois à emporter. "
+    jump after_the_walk
 
-    "Bonus Ending: Takeout"
 
-    # This ends the game
+label after_walking:
 
-    jump choice1_done
-
-label choice1_no:
-
-    $ menu_flag = False
-
-    player_name "Une petite visite ne fait pas de mal, en plus c'est très calme dans ce quartier."
-
-    jump choice1_done
-
-label choice1_done:
-
-    # ... the game continues here.
+# ... the game continues here.
 
     "Vous vous dirigez vers l'îlot où se trouve le congélateur."
 
@@ -117,7 +109,7 @@ label choice1_done:
     init:
         image yami neutral:
             "yami neutral.png"
-            zoom 1.5
+            zoom 1.3
 
     "Le grand homme vêtu de noir s'approche de vous, vous vous préparez à la rencontre."
     
@@ -126,18 +118,18 @@ label choice1_done:
     init:
         image yami confusedtalking:
             "yami confusedtalking.png"
-            zoom 1.5
+            zoom 1.3
 
     s "C'est ce que vous vouliez... ? Je t'ai vu tout à l'heure le regarder, mais tu ne l'as pas pris. J'ai donc décidé de vous aider un peu."
 
     menu:
         "Le remercier":
-            jump choice2_yes
+            jump thank_yami
 
         "Se méfier":
-            jump choice2_no
+            jump wary_of_yami
 
-label choice2_yes:
+label thank_yami:
     $ menu_flag = True
 
     show yami neutral
@@ -148,7 +140,7 @@ label choice2_yes:
     init:
         image yami neutraltalking:
             "yami neutraltalking.png"
-            zoom 1.5
+            zoom 1.3
 
     s "Pas de problème, est-ce que vous voulez d'aide avec d'autre choses?"
 
@@ -170,10 +162,12 @@ label choice2_yes:
 
     player_name "Tu blague pas? Moi aussi!"
 
-    jump choice2_done
+    jump after_yami
 
-label choice2_no:
+label wary_of_yami:
     $ menu_flag = False
+
+    jump after_yami
 
     player_name "Uhm... Merci..."
 
@@ -193,53 +187,53 @@ label choice2_no:
 
     "Ending 2: Tu t'es t'enfui"
 
-    # This ends the game
+    return
 
-    jump choice2_done
+label after_yami:
 
-label choice2_done:
-
-    # ... the game continues here.
+# ... the game continues here.
 
     player_name "Hmmm..."
+
+
+    # Initialize variables to track completed choices
+    $ option1_done = False
+    $ option2_done = False
+
+    # Call the choices menu
+    call choices
+
+    # End of the game
+    "You completed all the choices! Thanks for playing!"
+    return
+
 label choices:
     menu:
-        "Qu'est-ce que vous étudiez ?": 
-            s "J'étudie le Génie Civil"
-            
-            player_name "Mais c'est difficle, non?"
+        # Option 1, only if not already done
+        "Walk" :
+            jump start
 
-            s "Pas vraiment, sa me prenais beaucoup de temps pour en finir mes laboratoires, mais c'est facile quand tu comprend."
+        # Option 2, only if not already done
+        "Yami time" :
+            jump after_walking
+        
+        "Again" :
+            jump choices
 
-            $ option1_done = True
+        # Option 3, only appears when both Option 1 and Option 2 are done
+        "End" :
+            return
 
-            
-        "Quels sont les professeurs que vous avez ce semestre ?":
-            s "Je pense que j'ai M. Alfred pour mon cours d'algébre..."
-
-            s "J'ai aucune idée de ce que leurs nom est, j'en veut juste apprendre et passée mes classes."
-
-            $ option2_done = True
-
-        "Quel est votre nom?" if option1_done and option2_done:
-            y "Mon nom est Yami, et vous, quelle est votre nom?"
-
-            player_name "Ah! Je m'appelle %(player_name)s."
-
-            return # End of loop after option 3 is chosen
-
-        # Loop back to the choices menu
-        jump choices
+    # Loop back to the choices menu
+    jump choices
 
         # ... the game continues here.
 
-        y "Bien, le soleil va bientôt se coucher, il faut que j'y aille. Ce fut un plaisir de vous parler !"
+    y "Bien, le soleil va bientôt se coucher, il faut que j'y aille. Ce fut un plaisir de vous parler !"
 
-        player_name "Aurevoir !"
+    "Ending 1: Tu t'es fait un nouvel ami"
 
-        "Ending 1: Tu t'es fait un nouvel ami"
-
-        "A/N: Merci de jouer mon Roman Visual ! J'espère que vous avez du plaisir en jouant !"
+    "A/N: Merci de jouer mon Roman Visual ! J'espère que vous avez du plaisir en jouant !"
     
 
     

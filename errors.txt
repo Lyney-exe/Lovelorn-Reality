@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 227: expected python code
-    $
-     ^
+The label start is defined twice, at File "game/script.rpy", line 12:
+label start:
+and File "game/script.rpy", line 206:
+label start:
+
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Jan  6 10:23:42 2025
+Tue Jan  7 13:54:18 2025

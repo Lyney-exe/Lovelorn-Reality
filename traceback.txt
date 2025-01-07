@@ -1,22 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 210, in script
-    jump choiceA_done
-ScriptError: could not find label 'choiceA_done'.
+  File "game/script.rpy", line 207, in script
+    menu:
+  File "game/script.rpy", line 214, in <module>
+    "Quel est votre nom?" if choice3_done and choice4_done:
+NameError: name 'choice3_done' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 210, in script
-    jump choiceA_done
-  File "C:\Users\elhlyn11_ecolecathol\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 1699, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\elhlyn11_ecolecathol\Downloads\renpy-8.3.2-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'choiceA_done'.
+  File "game/script.rpy", line 207, in script
+    menu:
+  File "C:\Users\elhlyn11_ecolecathol\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 1619, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "C:\Users\elhlyn11_ecolecathol\Downloads\renpy-8.3.2-sdk\renpy\exports\menuexports.py", line 100, in menu
+    condition = renpy.python.py_eval(condition)
+  File "C:\Users\elhlyn11_ecolecathol\Downloads\renpy-8.3.2-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\elhlyn11_ecolecathol\Downloads\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 214, in <module>
+    "Quel est votre nom?" if choice3_done and choice4_done:
+NameError: name 'choice3_done' is not defined
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.3.2.24090902
 Lovelorn Reality 1.0
-Mon Jan  6 10:04:42 2025
+Tue Jan  7 13:38:21 2025
