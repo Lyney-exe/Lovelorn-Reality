@@ -247,7 +247,7 @@ label choices:
     # Loop back to the choices menu
     jump choices
 
-        # ... the game continues here.
+    
 
    
     
