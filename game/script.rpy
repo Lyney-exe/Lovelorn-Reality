@@ -26,7 +26,6 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-
     # These display lines of dialogue.
 
     tv "S'il te plaît, ma chérie ! Reste avec moi ! Je ne peux pas te perdre comme ça, pourquoi as-tu fait ça pendant notre lune de miel ! Pourquoi fallait-il que tu le fasses tout court ? !"
@@ -81,7 +80,6 @@ label start:
             player_name "Une petite visite ne fait pas de mal, en plus c'est très calme dans ce quartier."
 
 
-    jump after_the_walk
 
 
 label after_walking:
@@ -167,8 +165,6 @@ label thank_yami:
 label wary_of_yami:
     $ menu_flag = False
 
-    jump after_yami
-
     player_name "Uhm... Merci..."
 
     "Vous prenez avec précaution la boisson que vous vouliez dans sa main, en le regardant à plusieurs reprises, lui et sa main."
@@ -195,6 +191,7 @@ label after_yami:
 
     player_name "Hmmm..."
 
+    play music "Good_ending.mp3" fadeout 1
 
     # Initialize variables to track completed choices
     $ option1_done = False
@@ -203,37 +200,56 @@ label after_yami:
     # Call the choices menu
     call choices
 
-    # End of the game
-    "You completed all the choices! Thanks for playing!"
+    # Continue the game after all options are completed # Continue the game after all options are completed
+    y "Le soleil commence à se coucher, nous devrions tous les deux rentrer chez nous, mais j'ai été ravi de vous rencontrer !"
+    player_name "Oui, moi aussi ! À plus tard, et peut-être à l'université."
+    "Vous vous saluez tous les deux et Yami n'est bientôt plus visible."
+    "Ending 1: Tu t'es fait un nouvel ami"
     return
 
 label choices:
     menu:
-        # Option 1, only if not already done
-        "Walk" :
-            jump start
+        # Option 1, remains visible even after being selected
+        "Qu'est-ce que vous étudiez ?":
+            if not option1_done:
+                s "J'étudie le Génie Civil."
+                player_name "Mais c'est difficile, non ?"
+                s "Pas Vraiment, sa me prenais beaucoup de temps pour en finir mes laboratoires, mais avec du temps en apprendre, sa devient plus facile."
 
-        # Option 2, only if not already done
-        "Yami time" :
-            jump after_walking
-        
-        "Again" :
-            jump choices
+                $ option1_done = True
+            else:
+                s "J'étudie le Génie Civil."
+                player_name "Mais c'est difficile, non ?"
+                s "Pas Vraiment, sa me prenais beaucoup de temps pour en finir mes laboratoires, mais avec du temps en apprendre, sa devient plus facile."
+
+        # Option 2, remains visible even after being selected
+        "Quels sont les professeurs que vous avez ce semestre ?":
+            if not option2_done:
+                s "Je pense que j'ai M. Alfred pour mon cours d'algèbre..."
+                s "J'ai aucune idée, ce n'est pas comme si je m'en souciais de toute façon, j'en veut juste apprendre et passé mes examens."
+                $ option2_done = True
+            else:
+                s "Je pense que j'ai M. Alfred pour mon cours d'algèbre..."
+                s "J'ai aucune idée, ce n'est pas comme si je m'en souciais de toute façon, j'en veut juste apprendre et passé mes examens."
+               
 
         # Option 3, only appears when both Option 1 and Option 2 are done
-        "End" :
+        "Quel est votre nom ?" if option1_done and option2_done:
+            y "Mon nom est Yami, et vous ? Quelle est votre nom ?"
+            player_name "Ah ! Je m'apelle [player_name] !"
+            y "Enchanté de vous rencontre [player_name]."
+
             return
+
+
+        # Add any effects or actions here
 
     # Loop back to the choices menu
     jump choices
 
         # ... the game continues here.
 
-    y "Bien, le soleil va bientôt se coucher, il faut que j'y aille. Ce fut un plaisir de vous parler !"
-
-    "Ending 1: Tu t'es fait un nouvel ami"
-
-    "A/N: Merci de jouer mon Roman Visual ! J'espère que vous avez du plaisir en jouant !"
+   
     
 
     

@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label start is defined twice, at File "game/script.rpy", line 12:
-label start:
-and File "game/script.rpy", line 206:
-label start:
-
+File "game/script.rpy", line 30: expected statement.
+    config.main_menu_music = "Title_music.mp3"
+                           ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Jan  7 13:54:18 2025
+Wed Jan  8 10:29:49 2025
