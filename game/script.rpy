@@ -198,7 +198,7 @@ label after_yami:
     $ ask_teacher_done = False
 
     # Call the choices menu
-    call choices
+    call university_questions
 
     # Continue the game after all options are completed # Continue the game after all options are completed
     y "Le soleil commence à se coucher, nous devrions tous les deux rentrer chez nous, mais j'ai été ravi de vous rencontrer !"
@@ -245,7 +245,7 @@ label university_questions:
         # Add any effects or actions here
 
     # Loop back to the choices menu
-    jump choices
+    jump university_questions
 
     
 
