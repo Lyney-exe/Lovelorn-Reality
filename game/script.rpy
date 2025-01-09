@@ -194,8 +194,8 @@ label after_yami:
     play music "Good_ending.mp3" fadeout 1
 
     # Initialize variables to track completed choices
-    $ option1_done = False
-    $ option2_done = False
+    $ ask_study_done = False
+    $ ask_teacher_done = False
 
     # Call the choices menu
     call choices
@@ -207,16 +207,16 @@ label after_yami:
     "Ending 1: Tu t'es fait un nouvel ami"
     return
 
-label choices:
+label university_questions:
     menu:
         # Option 1, remains visible even after being selected
         "Qu'est-ce que vous étudiez ?":
-            if not option1_done:
+            if not ask_study_done:
                 s "J'étudie le Génie Civil."
                 player_name "Mais c'est difficile, non ?"
                 s "Pas Vraiment, sa me prenais beaucoup de temps pour en finir mes laboratoires, mais avec du temps en apprendre, sa devient plus facile."
 
-                $ option1_done = True
+                $ ask_study_done = True
             else:
                 s "J'étudie le Génie Civil."
                 player_name "Mais c'est difficile, non ?"
@@ -224,17 +224,17 @@ label choices:
 
         # Option 2, remains visible even after being selected
         "Quels sont les professeurs que vous avez ce semestre ?":
-            if not option2_done:
+            if not ask_teacher_done:
                 s "Je pense que j'ai M. Alfred pour mon cours d'algèbre..."
                 s "J'ai aucune idée, ce n'est pas comme si je m'en souciais de toute façon, j'en veut juste apprendre et passé mes examens."
-                $ option2_done = True
+                $ ask_teacher_done = True
             else:
                 s "Je pense que j'ai M. Alfred pour mon cours d'algèbre..."
                 s "J'ai aucune idée, ce n'est pas comme si je m'en souciais de toute façon, j'en veut juste apprendre et passé mes examens."
                
 
         # Option 3, only appears when both Option 1 and Option 2 are done
-        "Quel est votre nom ?" if option1_done and option2_done:
+        "Quel est votre nom ?" if ask_study_done and ask_teacher_done:
             y "Mon nom est Yami, et vous ? Quelle est votre nom ?"
             player_name "Ah ! Je m'apelle [player_name] !"
             y "Enchanté de vous rencontre [player_name]."
@@ -246,11 +246,6 @@ label choices:
 
     # Loop back to the choices menu
     jump choices
-
-    
-
-   
-    
 
     
 
