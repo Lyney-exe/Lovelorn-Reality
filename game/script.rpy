@@ -60,6 +60,12 @@ label start:
 
     "Vous vous dirigez vers la porte d'entrée du dortoir et vous enfilez vos chaussures tout en prenant un sweat à capuche que vous porterez en allant au magasin du coin le plus proche."
 
+    scene side_walk2 with dissolve
+    init:
+        image side_walk2:
+            "side_walk2.jpg"
+            zoom 3.0
+
     "La brise fraîche de l'air froid frappe votre visage alors que vous sortez, vous retournant, vous assurant que la porte est bien fermée derrière vous."
 
     "En marchant sur le bord de la route, vous vous rendez compte que le soleil s'est couché plus tôt que vous ne le pensiez."
@@ -85,7 +91,11 @@ label start:
 label after_walking:
 
 # ... the game continues here.
-
+    scene inside_store with dissolve
+    init:
+        image inside_store:
+            "inside_store.jpg"
+            zoom 3.5
     "Vous vous dirigez vers l'îlot où se trouve le congélateur."
 
     player_name "Mmm... Rien de plaisant..."
@@ -158,26 +168,53 @@ label thank_yami:
 
     s "Université de Moonshell."
 
+    show yami neutral
+
     player_name "Tu blague pas? Moi aussi!"
 
     jump after_yami
 
 label wary_of_yami:
     $ menu_flag = False
-
+    show yami neutral
     player_name "Uhm... Merci..."
 
     "Vous prenez avec précaution la boisson que vous vouliez dans sa main, en le regardant à plusieurs reprises, lui et sa main."
 
     "L'homme regarde votre pile remplie d'en-cas et votre dîner."
 
+    show yami side eyetalking
+    init:
+        image yami side eyetalking:
+            "yami side eyetalking.png"
+            zoom 1.3
+
     s "Avez-vous besoin d'aide pour ces... ?"
 
+    show yami side eye 
+    init:
+        image yami side eye:
+            "yami side eye.png"
+            zoom 1.3
+    show yami uh oh
+    init:
+        image yami uh oh:
+            "yami uh oh.png"
+            zoom 1.3
+    play music "Goodbye_ending.mp3" fadein 1.0
     player_name "Non ! Pas du tout ! Je n'ai pas besoin d'un étranger pour m'aider !"
+
+    hide yami side eye with dissolve
 
     "Vous essayez de marcher rapidement jusqu'à la caisse."
 
     "Vous payez vos affaires et quittez le magasin immédiatement."
+
+    scene bedroom with dissolve
+    init:
+        image bedroom:
+            "bedroom.jpg"
+            zoom 3.5
 
     player_name "Finalement... À la maison sans cet étranger me suivre ou essaie de me parler..."
 
@@ -201,8 +238,11 @@ label after_yami:
     call university_questions
 
     # Continue the game after all options are completed # Continue the game after all options are completed
+    show yami neutraltalking
     y "Le soleil commence à se coucher, nous devrions tous les deux rentrer chez nous, mais j'ai été ravi de vous rencontrer !"
+    show yami neutral
     player_name "Oui, moi aussi ! À plus tard, et peut-être à l'université."
+    hide yami neutral with dissolve
     "Vous vous saluez tous les deux et Yami n'est bientôt plus visible."
     "Ending 1: Tu t'es fait un nouvel ami"
     return
@@ -212,32 +252,51 @@ label university_questions:
         # Option 1, remains visible even after being selected
         "Qu'est-ce que vous étudiez ?":
             if not ask_study_done:
+                show yami neutraltalking
                 s "J'étudie le Génie Civil."
+                show yami neutral
                 player_name "Mais c'est difficile, non ?"
+                show yami neutraltalking
                 s "Pas Vraiment, sa me prenais beaucoup de temps pour en finir mes laboratoires, mais avec du temps en apprendre, sa devient plus facile."
-
+                show yami neutral
                 $ ask_study_done = True
             else:
+                show yami neutraltalking
                 s "J'étudie le Génie Civil."
                 player_name "Mais c'est difficile, non ?"
+                show yami confusedtalking
                 s "Pas Vraiment, sa me prenais beaucoup de temps pour en finir mes laboratoires, mais avec du temps en apprendre, sa devient plus facile."
-
+                show yami neutral
         # Option 2, remains visible even after being selected
         "Quels sont les professeurs que vous avez ce semestre ?":
             if not ask_teacher_done:
+                show yami side eyetalking
                 s "Je pense que j'ai M. Alfred pour mon cours d'algèbre..."
+                show yami neutraltalking
                 s "J'ai aucune idée, ce n'est pas comme si je m'en souciais de toute façon, j'en veut juste apprendre et passé mes examens."
+                show yami neutral
                 $ ask_teacher_done = True
             else:
+                show yami side eyetalking
                 s "Je pense que j'ai M. Alfred pour mon cours d'algèbre..."
+                show yami neutraltalking
                 s "J'ai aucune idée, ce n'est pas comme si je m'en souciais de toute façon, j'en veut juste apprendre et passé mes examens."
-               
+                show yami neutral
 
         # Option 3, only appears when both Option 1 and Option 2 are done
         "Quel est votre nom ?" if ask_study_done and ask_teacher_done:
+            show yami neutraltalking
             y "Mon nom est Yami, et vous ? Quelle est votre nom ?"
+            show yami neutral
             player_name "Ah ! Je m'apelle [player_name] !"
+            show yami neutraltalking
             y "Enchanté de vous rencontre [player_name]."
+            show yami neutral
+            scene corner_store with dissolve
+            init:
+                image corner_store:
+                    "corner_store.jpg"
+                    zoom 3.5
 
             return
 
